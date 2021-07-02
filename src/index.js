@@ -13,7 +13,7 @@ const loadMoreBtn = new LoadMoreBtn({ selector: '[data-action="load-more"]', hid
 const newsApiService = new NewsApiService();
 
 refs.searchForm.addEventListener('submit', onSearch);
-loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
+loadMoreBtn.refs.button.addEventListener('click', fetchArticles);
 
 function onSearch(event) {
   event.preventDefault();
@@ -25,20 +25,16 @@ function onSearch(event) {
   }
 
   loadMoreBtn.show();
-  loadMoreBtn.disable();
   newsApiService.resetPage();
-  newsApiService.fetchArticles().then(articles => {
-    clearArticlesContainer();
-    appendArticlesMarkup(articles);
-    loadMoreBtn.enable();
-  });
+  clearArticlesContainer();
+  fetchArticles();
 }
 
-function onLoadMore() {
+function fetchArticles() {
   loadMoreBtn.disable();
-  newsApiService.fetchArticles().then(articles =>{
-	appendArticlesMarkup(articles);
-	loadMoreBtn.enable();
+  newsApiService.fetchArticles().then(articles => {
+    appendArticlesMarkup(articles);
+    loadMoreBtn.enable();
   });
 }
 
