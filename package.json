@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url /news-api-hw-js",
-	"deploy": "gh-pages -d dist",
-	"predeploy": "npm run build"
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
