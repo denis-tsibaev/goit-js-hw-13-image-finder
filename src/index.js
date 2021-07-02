@@ -1,15 +1,26 @@
 import './sass/main.scss';
+import NewsApiService from './js/news-service';
 
-const options = {
-	headers: {
-		Authorization: '22318307-8fc961fa8d00a621cd6d86864',
-	},
+const refs = {
+  searchForm: document.querySelector('.js-search-form'),
+  articlesContainer: document.querySelector('.js-articles-container'),
+  loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 };
 
-const url =
-`https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=dog&page=1&per_page=12`;
+const newsApiService = new NewsApiService();
+
+refs.searchForm.addEventListener('submit', onSearch);
+refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 
-fetch(url, options)
-  .then(response => response.json())
-  .then(console.log)
+function onSearch(event) {
+  event.preventDefault();
+
+  newsApiService.query = event.currentTarget.elements.query.value;
+  newsApiService.resetPage();
+  newsApiService.fetchArticles(searchQuery);
+}
+
+function onLoadMore() {
+  newsApiService.fetchArticles(searchQuery);
+}
