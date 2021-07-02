@@ -1,36 +1,32 @@
 {
-  "name": "news-api-hw-js",
+  "name": "goit-js-hw-13-image-finder",
   "version": "1.0.0",
   "description": "## Зависимости",
   "main": ".posthtmlrc.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /news-api-hw-js",
+    "build": "parcel build src/index.html --public-url /goit-js-hw-12-countries",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/denis-tsibaev/news-api-hw-js.git"
+    "url": "git+https://github.com/denis-tsibaev/goit-js-hw-13-image-finder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/denis-tsibaev/news-api-hw-js/issues"
+    "url": "https://github.com/denis-tsibaev/goit-js-hw-13-image-finder/issues"
   },
-  "homepage": "https://denis-tsibaev/github.io/news-api-hw-js",
-  "dependencies": {
-    "gh-pages": "^3.2.3",
-    "handlebars": "^4.7.7",
-    "lodash.debounce": "^4.0.8",
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-nuke-dist": "^1.0.1"
-  },
+  "homepage": "https://github.com/denis-tsibaev/goit-js-hw-13-image-finder#readme",
   "devDependencies": {
-    "@pnotify/core": "^5.2.0",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.7.1",
     "sass": "^1.35.1"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "parcel-bundler": "^1.12.5"
   }
 }
